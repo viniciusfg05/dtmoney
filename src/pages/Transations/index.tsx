@@ -7,18 +7,22 @@ import { api } from "../../services/api";
 import { SeachForm } from "./components/SeachForm";
 import { PriceHightLightStyled, TransactionTableStyled, TransationsConteinerStyled } from "./styles";
 
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
+
+
 interface transactionsProps {
     id: number;
     descriptions: string;
     type: "income" | "outcome"
     category: string;
     price: number;
-    createdAt: string;
+    createdAt: string | null;
 }
 
 export function Transations() {
     const { transactions } = useContext(TransactionContext)
-
+    
     return (
         <>
             <Header />

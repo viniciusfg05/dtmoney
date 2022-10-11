@@ -12,7 +12,7 @@ interface TransactionsProps {
 
 interface TransactionType {
     transactions: TransactionsProps[];
-    fetchDataTransaction: (query?: any) => Promise<void>;
+    fetchDataTransaction: (query?: string) => Promise<void>;
 }
 
 interface TransactioProviderProps {
